@@ -14,15 +14,17 @@ Junior challenge at frontendmentors.io
 
 ## Overview
 
-
 User can use the slider and toggle to see prices for different page view numbers
 
 ### Screenshot
 
+![Interactive pricing component](https://github.com/Mahdii-Kariimiian/Interactive-pricing-component/assets/134393975/42a86623-f3b8-460c-82d6-02b6f89d3912)
+
+![Interactive pricing component1](https://github.com/Mahdii-Kariimiian/Interactive-pricing-component/assets/134393975/f79e3168-a42f-4745-877a-ddbb798b3dd8)
 
 ### Links
 
-- Netlify: 
+- Vercel: https://interactive-pricing-component-kappa-seven.vercel.app/
 
 ## My process
 ### Built with
