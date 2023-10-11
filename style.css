@@ -1,0 +1,354 @@
+/*                      */
+/*        Reset         */
+/*                      */
+
+/* Box sizing */
+
+*,
+*::after,
+*:before {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* Set up the body */
+
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with  */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animation for people who've turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01 !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01 !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*                      */
+/* Custom properties    */
+/*                      */
+
+:root {
+--SoftCyan: hsl(174, 77%, 80%); /* (Full Slider Bar) */
+--StrongCyan: hsl(174, 86%, 45%) ;/* (Slider Backround) */
+--LightGrayishRed: hsl(14, 92%, 95%) ;/* (Discount Background) */
+--LightRed: hsl(15, 100%, 70%); /* (Discount Text) */
+--PaleBlue: hsl(226, 100%, 87%); /* (CTA Text) */
+--White: hsl(0, 0%, 100%); /* (Pricing Component Background) */
+--VeryPaleBlue: hsl(230, 100%, 99%); /*  (Main Background) */
+--LightGrayishBlue: hsl(224, 65%, 95%); /* (Empty Slider Bar) */
+--LightGrayishBlue: hsl(223, 50%, 87%) ;/* (Toggle Background) */
+--GrayishBlue: hsl(225, 20%, 60%); /* (Text) */
+--DarkDesaturatedBlue: hsl(227, 35%, 25%) ;/* (Text & CTA Background) */
+}
+
+/*                      */
+/*   General Styles     */
+/*                      */
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    display:flex;
+    justify-content: center;
+    background-color: var(--VeryPaleBlue);
+    background-image: url(/images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    color: var(--GrayishBlue);
+}
+
+@media(min-width: 600px) {
+    body {
+        font-size: 18px;
+        background-size: contain;
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+/* Header */
+
+.header {
+    background-image: url(/images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-block: 5em;
+    padding-inline:3em;
+}
+
+.header__title {
+    font-size: 1.2em;
+    color: var(--DarkDesaturatedBlue);
+}
+
+.header__subtitle {
+    max-width: 200px;
+    margin: 1em auto;
+}
+
+@media(min-width: 600px) {
+    .header {
+        padding-block: 3em;
+    }
+
+    .header__title {
+        font-size: 1.75em;
+    }
+
+    .header__subtitle {
+        max-width: initial;
+        margin: 1em auto;
+    }
+}
+
+/* signup-section */
+
+.signup-section {
+    box-shadow: 0 0 20px var(--VeryPaleBlue);
+    background-color: var(--White);
+    margin: 0 .5em;
+    padding: 1.5em;
+    border-radius: 7px;
+}
+
+/* pricing */
+.pricing {
+    display: grid;
+    gap: 3em;
+    margin-bottom: 3em;
+
+}
+
+.pricing__views {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.pricing__interactive {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: var(--StrongCyan);
+    grid-column: 1 / -1;
+}
+
+.pricing-handler {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    width: 50px;
+    height: 50px;
+    top:-23px;
+    background-color: var(--StrongCyan);
+    border-radius: 50%;
+}
+
+.pricing-handler:hover {
+    box-shadow: 0 0 20px var(--StrongCyan)
+}
+
+#price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--DarkDesaturatedBlue);
+    
+}
+
+@media(min-width: 600px) {
+    .pricing {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .pricing__interactive {
+        order: 3;
+    }
+}
+
+
+/* Duration */
+
+.duration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-weight: 600;
+    margin-bottom: 5em;
+    font-size: .7em;
+}
+
+.duration::after {
+    content: "";
+    position:absolute;
+    bottom: -3em ;
+    right:-2.15em;
+    width:calc(100% + 4.3em);
+    height: 3px;
+    background-color: var(--VeryPaleBlue);
+}
+
+/* toggle */
+
+.switch { /* checkbox works in this area */
+    position:relative;
+    display: inline-block;
+    height: 1.4rem;
+    width: 2.5rem;
+}
+
+.slider { /* background for slider to toggle */
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--LightGrayishBlue);
+    border-radius: 50px;
+}
+
+.slider:hover {
+    background-color: var(--StrongCyan);
+}
+
+.checkbox:checked + .slider:hover {
+    background-color: var(--StrongCyan);
+}
+
+.slider:before { /* slider for toggle */
+    position: absolute;
+    display:flex;
+    align-items: center;
+    content: "";
+    top: 12%;
+    left: .2rem;
+    width: 40%;
+    height: 1rem;
+    background-color: var(--White);
+    border-radius: 50px;
+}
+
+.checkbox:checked + .slider { /* checked for yearly */
+    background-color: var(--LightGrayishBlue);
+}
+
+  .checkbox:checked + .slider:before { 
+    transform: translateX(0);
+    transition: all .5s ease;
+  }
+
+  .checkbox + .slider:before { /* not checked for monthly  */
+    transform: translateX(100%);
+    transition: all .5s ease;
+  }
+
+  .month-free  {
+        font-size: .65rem;
+        font-weight: 600;
+        position:relative;
+  }
+
+  /* End of toggle */
+
+.discount {
+    font-weight: 600;
+    background-color: var(--LightGrayishRed);
+    color: var(--LightRed);
+    padding: 2px 5px;
+    margin-left: 5px;
+    border-radius: 50px;
+}
+
+/* benefits-submit */
+
+.benefits-submit {
+   margin-top: 5em;
+}
+
+.benefits-submit ul {
+    margin-left: -2.5em;
+    margin-bottom: 2em;
+}
+
+.benefits-submit ul li {
+    list-style-image:url(/images/icon-check.svg);
+    list-style-position: inside;
+
+    font-weight: 600;
+    line-height: 2em;
+}
+
+.submit {
+    font-weight: 600;
+    background-color: var(--DarkDesaturatedBlue);
+    color: var(--GrayishBlue);
+    padding: .5em 3em;
+    border: 1px solid var(--DarkDesaturatedBlue);
+    border-radius: 50px;
+    cursor:pointer;
+}
+
+.submit:hover {
+    color: var(--LightGrayishBlue)
+}
+
+
+@media (min-width: 600px) {
+    .benefits-submit {
+        font-size: .7em;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        justify-content: space-between;
+    }
+
+    .benefits-submit ul {
+        text-align: left;
+    }
+}
